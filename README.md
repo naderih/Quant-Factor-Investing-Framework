@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This repository contains a professional-grade implementation of a quantitative active management framework, built from first principles as outlined in Grinold & Kahn's seminal book, "Active Portfolio Management." The project demonstrates an end-to-end pipeline, from the complex data engineering of CRSP/Compustat to the construction and attribution of an alpha-optimized portfolio.
+This repository contains a professional-grade implementation of a quantitative active management framework, built from first principles as outlined in Grinold & Kahn's seminal book, "Active Portfolio Management." The project demonstrates an end-to-end pipeline, from the data engineering of CRSP/Compustat to the construction and attribution of an alpha-optimized portfolio.
 
 This is a live research and development environment, designed to be a robust and scalable platform for testing systematic investment strategies.
 
@@ -20,9 +20,9 @@ The project follows a disciplined, quantitative approach, separating the investm
     $$
     V = XFX^T + \Delta
     $$
-    *   $X$: The Factor Exposure matrix (the "DNA" of each stock).
-    *   $F$: The Factor Covariance matrix (the "macro blueprint" of how factors interact).
-    *   $\Delta$: The Specific Risk matrix (the idiosyncratic, un-diversifiable risk of each stock).
+    *   $X$: NxN Factor Exposure matrix (the "DNA" of each stock).
+    *   $F$: KxK Factor Covariance matrix (the "macro blueprint" of how factors interact).
+    *   $\Delta$: The Diagonal Specific Risk matrix (the idiosyncratic, un-diversifiable risk of each stock).
 
 2.  **Alpha Modeling:** We generate a forecast of **expected residual return**, or **alpha ($\alpha$)**. A critical step is to ensure these alpha signals are **benchmark-neutral**, which purifies the signal and separates stock-selection skill from unintended market bets.
     $$
@@ -87,7 +87,7 @@ The framework is implemented as a sequential pipeline of Jupyter Notebooks.
 
 ## How to Run This Project
 
-1.  **Data Setup:** This project requires access to CRSP, Compustat, and the CCM Linking Table. The raw data files are not included in this repository. You must first run the Stata script `prepare_data.do` to generate the initial clean `.dta` files.
+1.  **Data Setup:** This project requires access to CRSP, Compustat, and the CCM Linking Table. (a toy version of this project using a small stock sample from yahoo Finance is available at https://github.com/naderih/Quantitative-Active-Management. For this project, the raw data files are not included in this repository. You must first run the Stata script `prepare_data.do` to generate the initial clean `.dta` files.
 2.  **Environment Setup:** The required Python libraries are listed in the `requirements.txt` file. You can install them using pip:
     ```bash
     pip install -r requirements.txt
@@ -101,6 +101,6 @@ The framework is implemented as a sequential pipeline of Jupyter Notebooks.
 This framework is a robust foundation for further research. Potential next steps include:
 *   **Advanced Alpha Signals:** Replace the simple factors with more sophisticated signals, particularly the **LLM-based Financial Constraint factor** prototyped in Notebook 6.
 *   **Risk Model Refinements:** Implement more advanced forecasting techniques for the Factor Covariance matrix ($F$), such as **EWMA and shrinkage estimators**, to make the risk model more adaptive.
-*   **Backtesting Engine:** Expand the single-period optimization in Notebook 5 into a full, event-driven backtesting engine to simulate strategy performance over time, accounting for transaction costs, turnover, and implementation lag.
+*   **Backtesting Engine:** Expand the single-period optimization into a full, event-driven backtesting engine to simulate strategy performance over time, accounting for transaction costs, turnover, and implementation lag.
 *   **Constrained Optimization:** Implement real-world constraints in the portfolio construction step, such as no-short-selling constraints, position limits, and factor exposure limits.
 
