@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This repository contains a professional-grade implementation of a quantitative active management framework, built from first principles as outlined in Grinold & Kahn's seminal book, "Active Portfolio Management." The project demonstrates an end-to-end pipeline, from the data engineering of CRSP/Compustat to the construction and attribution of an alpha-optimized portfolio.
+This repository contains a professional-grade implementation of a quantitative active management framework, built from first principles as outlined in Grinold & Kahn's seminal book, "Active Portfolio Management." The project demonstrates an end-to-end pipeline, from the data engineering of CRSP/Compustat to the construction and attribution of an alpha-optimized portfolio.(a self-contained "toy" version of this project using a small stock sample from yahoo Finance is available at https://github.com/naderih/Quantitative-Active-Management.)
 
 This is a live research and development environment, designed to be a robust and scalable platform for testing systematic investment strategies.
 
@@ -87,7 +87,7 @@ The framework is implemented as a sequential pipeline of Jupyter Notebooks.
 
 ## How to Run This Project
 
-1.  **Data Setup:** This project requires access to CRSP, Compustat, and the CCM Linking Table. (a toy version of this project using a small stock sample from yahoo Finance is available at https://github.com/naderih/Quantitative-Active-Management. For this project, the raw data files are not included in this repository. You must first run the Stata script `prepare_data.do` to generate the initial clean `.dta` files.
+1.  **Data Setup:** This project requires access to CRSP, Compustat, and the CCM Linking Table. (a toy version of this project using a small stock sample from yahoo Finance is available at https://github.com/naderih/Quantitative-Active-Management.) For this project, the raw data files are not included in this repository. You must first run the Stata script `prepare_data.do` to generate the initial clean `.dta` files.
 2.  **Environment Setup:** The required Python libraries are listed in the `requirements.txt` file. You can install them using pip:
     ```bash
     pip install -r requirements.txt
