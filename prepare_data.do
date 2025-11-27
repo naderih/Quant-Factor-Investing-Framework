@@ -28,9 +28,9 @@ keep if popsrc == "D"    // Domestic source
 * Value: ceq (Book Equity), pstkq (Preferred Stock), at (Assets), lt (Liabilities)
 * Earnings: ibq (Income Before Extra), saleq (Sales)
 * Constraints: dlttq (Long Term Debt), dlcq (Debt in Current), oancfq (Cash Flow - often annual, check q), cheq (Cash)
-keep gvkey datadate fyearq fqtr tic sic ///
+keep gvkey datadate fyearq fqtr tic sic rdq ///
 	 ceqq pstkq atq ltq ibq saleq dlttq dlcq ///
-	 cheq oancfy dpq dvpspq cshoq prccq oiadpq actq lctq
+	 cheq oancfy dpq dvpspq cshoq prccq oiadpq actq lctq 
 
 * Rename to lowercase for Python
 rename *, lower
