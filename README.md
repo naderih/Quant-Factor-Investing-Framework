@@ -87,12 +87,12 @@ The framework is implemented as a sequential pipeline of Jupyter Notebooks.
 
 ## How to Run This Project
 
-1.  **Data Setup:** This project requires access to CRSP, Compustat, and the CCM Linking Table. (a toy version of this project using a small stock sample from yahoo Finance is available at https://github.com/naderih/Quantitative-Active-Management.) For this project, the raw data files are not included in this repository. You must first run the Stata script `prepare_data.do` to generate the initial clean `.dta` files.
+1.  **Data Setup:** This project requires access to CRSP, Compustat, and the CCM Linking Table. (a self-contained "toy" version of this project using a small stock sample from Yahoo Finance is available at https://github.com/naderih/Quantitative-Active-Management.) For this project, the raw data files are not included in this repository. You must first run the Stata script `prepare_data.do` to generate the initial clean `.dta` files.
 2.  **Environment Setup:** The required Python libraries are listed in the `requirements.txt` file. You can install them using pip:
     ```bash
     pip install -r requirements.txt
     ```
-3.  **Run Notebooks:** Run the Jupyter Notebooks in sequential order (01 through 05).
+3.  **Run Notebooks:** Once the pane data is created using the .do stata code, Run the Jupyter Notebooks in sequential order (01 through 05).
 
 ---
 
