@@ -1,4 +1,5 @@
 clear all 
+
 set more off 
 
 * set our data paths 
@@ -10,7 +11,7 @@ global OUTPUT_DIR "D:\OneDrive\0. DATASETS"
 use "$DATA_DIR\compustat_raw.dta", clear 
 
 * filter date 
-keep if fyearq >= 1995
+keep if fyearq >= 1990
 
 * filter for US comanies only 
 keep if fic == "USA"
@@ -38,6 +39,7 @@ rename *, lower
 compress
 save "$DATA_DIR\temps\compustat_clean_quarterly.dta", replace
 
+
 *---------------------------------------------------------------------------------
 * --- 3. Process CRSP (Market Data) ---
 * --- . Load and Filter the Massive CRSP File ---
@@ -53,7 +55,7 @@ rename *, lower
 
 * a) Filter by Date
 gen year_ = year(date)
-keep if year_ >= 1995
+keep if year_ >= 1990
 drop year_
 di "Filtered by date."
 
